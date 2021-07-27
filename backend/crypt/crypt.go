@@ -411,7 +411,7 @@ func (f *Fs) put(ctx context.Context, in io.Reader, src fs.ObjectInfo, options [
 				if err != nil {
 					fs.Errorf(o, "Failed to remove corrupted object: %v", err)
 				}
-				return nil, errors.Errorf("corrupted on transfer: %v hash differ %q(source) vs %q(destination)", ht, srcHash, dstHash)
+				return nil, errors.Errorf("corrupted on transfer: %v crypted hash differ %q(source) vs %q(destination)", ht, srcHash, dstHash)
 			}
 			fs.Debugf(src, "%v = %s OK", ht, srcHash)
 		}
