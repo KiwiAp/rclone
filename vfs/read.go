@@ -361,7 +361,7 @@ func (fh *ReadFileHandle) checkHash() error {
 			return err
 		}
 		if !hash.Equals(dstSum, srcSum) {
-			return errors.Errorf("corrupted on transfer: %v hash differ %q vs %q", hashType, dstSum, srcSum)
+			return errors.Errorf("corrupted on transfer: %v hash differ %q(destination) vs %q(source)", hashType, dstSum, srcSum)
 		}
 	}
 
